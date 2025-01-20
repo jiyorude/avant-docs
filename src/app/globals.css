@@ -51,3 +51,7 @@
 .mxFlexRight {
   @apply flex items-center justify-end;
 }
+
+.mxCircle {
+  @apply w-10 h-10 p-4 rounded-full;
+}
