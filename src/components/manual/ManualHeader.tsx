@@ -1,35 +1,40 @@
 import React from 'react';
-import Link from 'next/link';
 
 interface ManualHeaderProps {
-    header: string;
-    subtext: string;
-    difficulty: [1, 2, 3, 4, 5];
-    returnHome: string;
-    nextPage: string;
+  header: string;
+  ariaLabel: string;
+  mode: 'white-teal' | 'grey-black' | 'black-white' | 'red-grey' | 'teal-red' | 'red-white';
 };
 
-
-const handleDifficulty = (difficulty: number) => {
-    // Work in progress
-    switch (difficulty) {
-        case 1:
-            return (
-                <figure className='mxCircle mxFlexCenter bg-avaWhite text-avaBlack border-2 border-avaBlack'>
-                    <p className='font-avaRegular text-sm'>Very Easy</p>
-                </figure>
-            )
-
+  const handleMode = (mode: ManualHeaderProps['mode']) => {
+    switch (mode) {
+      case 'white-teal':
+        return 'bg-gradient-to-l from-avaTeal to-avaWhite';
+      case 'grey-black':
+        return 'bg-gradient-to-r from-avaGrey to-avaBlack';
+      case 'black-white':
+        return 'bg-gradient-to-l from-avaBlack to-avaWhite';
+      case 'red-grey':
+        return 'bg-gradient-to-r from-avaGrey to-avaRed';
+      case 'teal-red':
+        return 'bg-gradient-to-l from-avaTeal to-avaRed';
+      case 'red-white':
+        return 'bg-gradient-to-r from-avaRed to-avaRed';
+      default:
+        return 'bg-gradient-to-l from-avaTeal to-avaWhite'; 
     }
-}
+  }
 
-const ManualHeader: React.FC<ManualHeaderProps> = ({ header, subtext, difficulty, returnHome, nextPage }) => {
-    // WORK IN PROGRESS
-    return (
-        <header className='container mx-auto mxFlexCenter p-12 border border-black'>
-            <h1 className='text-avaTeal font-avaSemiBold'>{header}</h1>
-        </header>
-    ) 
+const ManualHeader: React.FC<ManualHeaderProps> = ({ header, mode, ariaLabel }) => {
+  const gradient = handleMode(mode);
+
+  return (
+    <header className="mx-auto container mxFlexCenter py-10" aria-label={ariaLabel}>
+      <h1 className={`py-4 px-12 tracking-[2px] lg:tracking-[5px] ${gradient} select-none text-3xl lg:text-4xl font-avaBold inline-block text-transparent bg-clip-text`}>
+        {header}
+      </h1>
+    </header>
+  );
 };
 
 export default ManualHeader;
