@@ -1,0 +1,1 @@
+// Separate image block content
