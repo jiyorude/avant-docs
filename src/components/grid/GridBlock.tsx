@@ -24,8 +24,8 @@ const GridBlock: React.FC<GridBlockProps> = ({ icon, header, subtext, linkTo }) 
           <main className="mt-4 pr-8 text-left text-sm text-pretty">
               {subtext}
           </main>
-          <footer className="flex justify-end">
-              <figure className="flex justify-end items-center">
+          <footer className="flex justify-end pr-4 w-full">
+              <figure>
                   <IoIosArrowForward className="text-lg group-hover:text-avaTeal group-hover:translate-x-2.5 duration-200 ease-in-out transition-all" />
               </figure>
           </footer>
