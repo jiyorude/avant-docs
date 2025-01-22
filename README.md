@@ -7,7 +7,7 @@ Documentation Front-End for the Avant algorithm
 Created in Next.js, TypeScript and Tailwind CSS<br/>
 Source code licensed under MIT
 
-<br/>
+<br/><br/>
 
 
 
