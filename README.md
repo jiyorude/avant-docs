@@ -17,6 +17,7 @@ Source code licensed under MIT
 * Open a new terminal window and install all dependencies with `npm i`. Wait until all dependencies have been installed.
 * Run the development server with `npm run dev`
 
-<br/>
+<br/> <br/>
+
 &copy; Jordy Veenstra 2024-2025 <br/>
 &copy; A Pixelated Point of View 2024-2025
